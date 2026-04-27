@@ -20,10 +20,23 @@ public class Main {
         System.out.println(year + " год является " + (isLeap ? "" : "не ") + "високосным");
 
         // Задача 4
-        int deliveryDistance = 95;
-        int deliveryDays = (deliveryDistance <= 20) ? 1 :
-                (deliveryDistance <= 60) ? 2 :
-                        (deliveryDistance <= 100) ? 3 : -1;
+int deliveryDistance = 95;
+int deliveryDays = 0;
+
+if (deliveryDistance <= 20) {
+    deliveryDays = 1;
+} else if (deliveryDistance <= 60) {
+    deliveryDays = 2;
+} else if (deliveryDistance <= 100) {
+    deliveryDays = 3;
+} else {
+    System.out.println("Свыше 100 км доставки нет.");
+}
+
+// Проверяем, была ли найдена зона доставки, прежде чем выводить результат
+if (deliveryDistance <= 100) {
+    System.out.println("Потребуется дней: " + deliveryDays);
+}
 
         if (deliveryDays == -1) {
             System.out.println("Свыше 100 км доставки нет.");
